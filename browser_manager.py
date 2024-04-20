@@ -52,7 +52,7 @@ class BrowserManager:
         # inserting the search phrase in the input field
         browser.input_text("//input[@placeholder='Search']",phrase)
         browser.click_button("//button[@aria-label='Search Al Jazeera']")
-        browser.close_all_browsers()
+        # browser.close_all_browsers()
 
 
         # Trying to find it there is a realated articles with the search phrase
@@ -66,6 +66,15 @@ class BrowserManager:
         # sort by time
         dropdown_locator = "//select[@id='search-sort-option']/option[1]" 
         browser.click_element(dropdown_locator)
+
+        try:
+            # browser.wait_until_element_is_visible("xpath://*[@id='main-content-area']/div[2]/div[2]", timeout=10)
+            elements1 = browser.find_elements('css:.search-result__list')
+            for element in elements1:
+                print(element.text)  # Example action on each element
+            print("YEs it worked")
+        except Exception as e:
+            print(e, "NOOOOOO it didn't find it")
 
 bm = BrowserManager()
 url = "https://www.aljazeera.com/"
