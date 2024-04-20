@@ -31,7 +31,7 @@ class BrowserManager:
     def search_the_phrase(self):
         global browser
         print("inside search method")
-        if(self.browser):
+        if(browser):
             print("found browser")
         else:
             print("not found browser")
@@ -39,7 +39,7 @@ class BrowserManager:
         # if the site contains collecting cookies 
         try:
             print("inside tyr")
-            sbrowser.click_button('Allow all')
+            browser.click_button('Allow all')
             print("it clicked allow")
 
         except:
