@@ -1,5 +1,5 @@
 from RPA.Browser.Selenium import Selenium 
-
+from robocorp.tasks import task
 
 class BrowserManager:
     def __init__(self):
