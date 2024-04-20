@@ -45,6 +45,7 @@ class BrowserManager:
             print("it didn't clicked allow")
             pass
         # finding the serach icon and field
+        phrase = "Business"
         locator1 = "//button[@aria-pressed='false']//*[name()='svg']"
         browser.wait_until_page_contains_element(locator1, timeout=10)
         browser.click_element(locator1)
@@ -75,8 +76,9 @@ class BrowserManager:
             print("YEs it worked")
         except Exception as e:
             print(e, "NOOOOOO it didn't find it")
-
-bm = BrowserManager()
-url = "https://www.aljazeera.com/"
-bm.opening_the_news_Site(url)
-bm.search_the_phrase()
+@task
+def main():
+    bm = BrowserManager()
+    url = "https://www.aljazeera.com/"
+    bm.opening_the_news_Site(url)
+    bm.search_the_phrase()
