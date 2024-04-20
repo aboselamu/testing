@@ -6,7 +6,7 @@ class BrowserManager:
         self.browser = None
 
     #oppening the site aljazeera.com
-    def opening_the_news_Site(self):
+    def opening_the_news_Site(self,url):
         global browser
         # logger.info("Opening the news site.")
         browser = Selenium(auto_close = False)
