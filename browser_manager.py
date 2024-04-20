@@ -6,8 +6,8 @@ class BrowserManager:
         self.browser = None
 
     #oppening the site aljazeera.com
-    def opening_the_news_Site(self, url):
-
+    def opening_the_news_Site(self):
+        global browser
         # logger.info("Opening the news site.")
         browser = Selenium(auto_close = False)
         
@@ -29,6 +29,7 @@ class BrowserManager:
 
 
     def search_the_phrase(self):
+        global browser
         print("inside search method")
         if(self.browser):
             print("found browser")
@@ -81,4 +82,5 @@ def main():
     bm = BrowserManager()
     url = "https://www.aljazeera.com/"
     bm.opening_the_news_Site(url)
+    # br = bm.browser
     bm.search_the_phrase()
